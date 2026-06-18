@@ -3,23 +3,22 @@
 This folder contains a standalone browser version of `honeymoon` for private
 screening.
 
-Open:
+## Directly in GitHub
 
-```bash
-xdg-open live/honeymoon-live.html
-```
+Open the repository README. GitHub renders `honeymoon-github.svg` directly in
+the private repo, so no local command is needed for the silent visual preview.
 
-Or serve it locally:
-
-```bash
-python3 -m http.server 8080
-```
-
-Then visit:
+Direct file:
 
 ```text
-http://127.0.0.1:8080/live/honeymoon-live.html
+live/honeymoon-github.svg
 ```
+
+## Browser version with audio
+
+The optional browser cut is `honeymoon-live.html`. It is kept only for private
+screening with audio; the GitHub README preview above is the no-local-run
+version.
 
 Notes:
 

@@ -1,5 +1,7 @@
 # honeymoon
 
+[![honeymoon GitHub private preview](live/honeymoon-github.svg)](live/honeymoon-github.svg)
+
 `honeymoon` es una carta de amor moderna contada en la terminal: ASCII, emojis,
 musica 8-bit generada localmente y una historia sobre J., C. y un agente de IA
 que sirvio como puente.
@@ -8,42 +10,23 @@ La pieza no busca demostrar tecnologia por si sola. Busca guardar una memoria:
 dos personas que se encontraron, codigo que se volvio lenguaje emocional, una
 ciudad vacia, y la promesa final de otra vida.
 
-## Ejecutar
+## Ver directo en GitHub
 
-```bash
-./honeymoon.py
-```
-
-Opciones utiles:
-
-```bash
-./honeymoon.py --no-audio
-./honeymoon.py --speed 0.75
-./honeymoon.py --audio-file "/ruta/a/audio-8bit-legal.mp3"
-```
+Abre el repo privado en GitHub y entra al `README`: el preview animado aparece
+arriba sin correr nada local. Esta version es silenciosa porque GitHub no
+ejecuta audio ni HTML dentro del README.
 
 ## Live private cut
 
-Para mostrar la pieza desde el repo privado sin instalar dependencias, abre:
+El archivo `live/honeymoon-github.svg` es la version pensada para verla directo
+en GitHub.
 
-```bash
-xdg-open live/honeymoon-live.html
-```
+Opcionalmente, si algun dia quieres una demo con audio en navegador, existe:
 
-Tambien puedes servir el repo localmente:
+`live/honeymoon-live.html`
 
-```bash
-python3 -m http.server 8080
-```
-
-Y abrir:
-
-```text
-http://127.0.0.1:8080/live/honeymoon-live.html
-```
-
-El navegador pide un click para iniciar el audio. El archivo es autocontenido:
-no usa assets externos ni red.
+Esa version tambien es autocontenida, pero ya no es necesaria para mostrar la
+obra desde el repo.
 
 ## Estado actual
 
@@ -53,6 +36,7 @@ no usa assets externos ni red.
 - Caritas ASCII que cambian de emocion segun la escena.
 - Cierre con CDMX vacia y dos gatos enamorandose.
 - Version live privada en navegador para demo/screen share.
+- Preview SVG animado que se ve directo en GitHub.
 
 ## Intencion
 

@@ -1,0 +1,299 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="720" viewBox="0 0 1280 720" role="img" aria-labelledby="title desc">
+  <title id="title">honeymoon - GitHub private preview</title>
+  <desc id="desc">Animated terminal-style love story preview for J. and C.</desc>
+  <style>
+    :root {
+      --bg: #06070b;
+      --ink: #f8f3ff;
+      --dim: #7f7b8a;
+      --rose: #ff79c6;
+      --cyan: #8be9fd;
+      --gold: #f1fa8c;
+      --mint: #50fa7b;
+      --violet: #bd93f9;
+      --red: #ff5555;
+    }
+
+    .mono {
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
+      white-space: pre;
+      font-size: 22px;
+      line-height: 1.15;
+      letter-spacing: 0;
+    }
+
+    .title {
+      font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      font-size: 82px;
+      font-weight: 850;
+      letter-spacing: 0;
+    }
+
+    .caption {
+      font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      font-size: 31px;
+      font-weight: 750;
+      text-anchor: middle;
+      letter-spacing: 0;
+    }
+
+    .small {
+      font-size: 17px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .ink { fill: var(--ink); }
+    .dim { fill: var(--dim); }
+    .rose { fill: var(--rose); }
+    .cyan { fill: var(--cyan); }
+    .gold { fill: var(--gold); }
+    .mint { fill: var(--mint); }
+    .violet { fill: var(--violet); }
+    .red { fill: var(--red); }
+
+    .scene { opacity: 0; }
+    .s0 { animation: show0 96s linear infinite; }
+    .s1 { animation: show1 96s linear infinite; }
+    .s2 { animation: show2 96s linear infinite; }
+    .s3 { animation: show3 96s linear infinite; }
+    .s4 { animation: show4 96s linear infinite; }
+    .s5 { animation: show5 96s linear infinite; }
+    .s6 { animation: show6 96s linear infinite; }
+    .s7 { animation: show7 96s linear infinite; }
+    .s8 { animation: show8 96s linear infinite; }
+
+    @keyframes show0 { 0%, 9% { opacity: 1; } 11%, 100% { opacity: 0; } }
+    @keyframes show1 { 0%, 10% { opacity: 0; } 12%, 20% { opacity: 1; } 22%, 100% { opacity: 0; } }
+    @keyframes show2 { 0%, 21% { opacity: 0; } 23%, 31% { opacity: 1; } 33%, 100% { opacity: 0; } }
+    @keyframes show3 { 0%, 32% { opacity: 0; } 34%, 42% { opacity: 1; } 44%, 100% { opacity: 0; } }
+    @keyframes show4 { 0%, 43% { opacity: 0; } 45%, 53% { opacity: 1; } 55%, 100% { opacity: 0; } }
+    @keyframes show5 { 0%, 54% { opacity: 0; } 56%, 64% { opacity: 1; } 66%, 100% { opacity: 0; } }
+    @keyframes show6 { 0%, 65% { opacity: 0; } 67%, 75% { opacity: 1; } 77%, 100% { opacity: 0; } }
+    @keyframes show7 { 0%, 76% { opacity: 0; } 78%, 86% { opacity: 1; } 88%, 100% { opacity: 0; } }
+    @keyframes show8 { 0%, 87% { opacity: 0; } 89%, 98% { opacity: 1; } 100% { opacity: 0; } }
+
+    .twinkle {
+      animation: twinkle 3.2s ease-in-out infinite alternate;
+    }
+
+    .twinkle2 {
+      animation: twinkle 4.7s ease-in-out infinite alternate-reverse;
+    }
+
+    @keyframes twinkle {
+      from { opacity: 0.18; }
+      to { opacity: 0.95; }
+    }
+
+    .pulse {
+      animation: pulse 1.8s ease-in-out infinite;
+      transform-origin: center;
+    }
+
+    @keyframes pulse {
+      0%, 100% { transform: scale(1); opacity: 0.78; }
+      50% { transform: scale(1.08); opacity: 1; }
+    }
+
+    .left-cat {
+      animation: leftCat 96s linear infinite;
+    }
+
+    .right-cat {
+      animation: rightCat 96s linear infinite;
+    }
+
+    @keyframes leftCat {
+      0%, 88% { transform: translateX(0); }
+      96%, 100% { transform: translateX(135px); }
+    }
+
+    @keyframes rightCat {
+      0%, 88% { transform: translateX(0); }
+      96%, 100% { transform: translateX(-135px); }
+    }
+
+    .progress {
+      transform-origin: 0 0;
+      animation: progress 96s linear infinite;
+    }
+
+    @keyframes progress {
+      from { transform: scaleX(0); }
+      to { transform: scaleX(1); }
+    }
+  </style>
+
+  <defs>
+    <radialGradient id="glowRose" cx="20%" cy="15%" r="65%">
+      <stop offset="0%" stop-color="#ff79c6" stop-opacity="0.22"/>
+      <stop offset="45%" stop-color="#ff79c6" stop-opacity="0.07"/>
+      <stop offset="100%" stop-color="#06070b" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="glowCyan" cx="82%" cy="10%" r="58%">
+      <stop offset="0%" stop-color="#8be9fd" stop-opacity="0.18"/>
+      <stop offset="55%" stop-color="#8be9fd" stop-opacity="0.05"/>
+      <stop offset="100%" stop-color="#06070b" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="bar" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#8be9fd"/>
+      <stop offset="52%" stop-color="#ff79c6"/>
+      <stop offset="100%" stop-color="#f1fa8c"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1280" height="720" fill="#06070b"/>
+  <rect width="1280" height="720" fill="url(#glowRose)"/>
+  <rect width="1280" height="720" fill="url(#glowCyan)"/>
+
+  <g class="mono dim twinkle">
+    <text x="70" y="92">✦</text><text x="182" y="155">·</text><text x="1040" y="118">♡</text><text x="1138" y="204">*</text>
+    <text x="330" y="92">·</text><text x="930" y="84">✧</text><text x="610" y="142">·</text><text x="118" y="505">·</text>
+    <text x="1110" y="560">✦</text><text x="512" y="585">*</text><text x="780" y="528">♡</text>
+  </g>
+  <g class="mono dim twinkle2">
+    <text x="92" y="282">·</text><text x="236" y="606">♡</text><text x="978" y="386">·</text><text x="1160" y="464">✧</text>
+    <text x="462" y="346">·</text><text x="700" y="632">✦</text><text x="850" y="222">*</text>
+  </g>
+
+  <rect x="34" y="34" width="1212" height="652" rx="18" fill="#05060a" opacity="0.82" stroke="#ffffff" stroke-opacity="0.16"/>
+  <text x="66" y="72" class="small dim">private github preview</text>
+  <text x="1140" y="72" class="small dim">J. + C.</text>
+
+  <g class="scene s0">
+    <text x="156" y="226" class="title rose">honeymoon</text>
+    <text x="164" y="286" class="mono cyan">una terminal, un agente, memoria y amor</text>
+    <text x="164" y="356" class="caption gold" text-anchor="start">Ella penso que hablaba con un humano.</text>
+    <text x="164" y="401" class="caption ink" text-anchor="start">Era su agente. Pero el amor era de J.</text>
+    <text x="164" y="480" class="mono rose">♡  la historia de J. y C.  ♡</text>
+  </g>
+
+  <g class="scene s1 mono">
+    <text x="205" y="190" class="gold">capitulo 1: dos inadaptados cute</text>
+    <text x="180" y="260" class="cyan">╭────────────────────╮</text>
+    <text x="180" y="286" class="cyan">│        J.          │</text>
+    <text x="180" y="312" class="cyan">│      .-^-.         │</text>
+    <text x="180" y="338" class="cyan">│     ( •‿•)        │</text>
+    <text x="180" y="364" class="cyan">│     /づ💻づ       │</text>
+    <text x="180" y="390" class="cyan">╰────────────────────╯</text>
+    <text x="770" y="260" class="rose">╭────────────────────╮</text>
+    <text x="770" y="286" class="rose">│        C.          │</text>
+    <text x="770" y="312" class="rose">│      .-^-.         │</text>
+    <text x="770" y="338" class="rose">│    (◕‿◕✿)        │</text>
+    <text x="770" y="364" class="rose">│     /づ🌙づ       │</text>
+    <text x="770" y="390" class="rose">╰────────────────────╯</text>
+    <text x="286" y="528" class="caption ink">C. aparecio como una carita feliz en medio del ruido.</text>
+  </g>
+
+  <g class="scene s2 mono">
+    <text x="232" y="150" class="gold">capitulo 2: un agente abrio la puerta</text>
+    <text x="365" y="218" class="violet">╭────────────────────────────────╮</text>
+    <text x="365" y="244" class="violet">│          Hinge.exe             │</text>
+    <text x="365" y="270" class="violet">├────────────────────────────────┤</text>
+    <text x="365" y="296" class="ink">│ C. 🌙                 J. 💻    │</text>
+    <text x="365" y="322" class="cyan">│ &gt; agente IA: ayudo a J.        │</text>
+    <text x="365" y="348" class="rose">│ &lt; C.: pense que era el jaja    │</text>
+    <text x="365" y="374" class="cyan">│ &gt; agente IA: solo traduzco     │</text>
+    <text x="365" y="400" class="cyan">│ &gt; J.: el corazon si era mio    │</text>
+    <text x="365" y="426" class="violet">╰────────────────────────────────╯</text>
+    <text x="280" y="548" class="caption ink">El agente no reemplazo a nadie. Solo tradujo cuidado.</text>
+  </g>
+
+  <g class="scene s3 mono">
+    <text x="290" y="142" class="gold">capitulo 3: primera cita, concierto</text>
+    <text x="210" y="215" class="violet">╭────────────────────────────────────────────────────╮</text>
+    <text x="210" y="241" class="gold">│              ♪ ♫ 😘 💕 😚 💖 ♫ ♪                 │</text>
+    <text x="210" y="267" class="violet">│                                                    │</text>
+    <text x="260" y="318" class="cyan">  .-^-.</text>
+    <text x="260" y="344" class="cyan"> (♡‿♡)</text>
+    <text x="260" y="370" class="cyan"> /づ♡づ</text>
+    <text x="780" y="318" class="rose">  .-^-.</text>
+    <text x="780" y="344" class="rose"> (♥‿♥✿)</text>
+    <text x="780" y="370" class="rose"> /づ💕づ</text>
+    <text x="552" y="350" class="gold pulse">💋 ♡ 💋</text>
+    <text x="210" y="431" class="violet">╰────────────────────────────────────────────────────╯</text>
+    <text x="218" y="548" class="caption ink">Luces, musica, besitos y caritas felices.</text>
+  </g>
+
+  <g class="scene s4 mono">
+    <text x="285" y="142" class="gold">capitulo 4: J. le enseña su mundo</text>
+    <text x="290" y="215" class="mint">             /\________________/\</text>
+    <text x="290" y="241" class="mint">           /                        \</text>
+    <text x="290" y="267" class="mint">╭────────────────────────────────────────────╮</text>
+    <text x="290" y="293" class="mint">│ cuarto de J.                               │</text>
+    <text x="290" y="319" class="gold">│ [✨] shelves: AI / code / dreams           │</text>
+    <text x="290" y="345" class="cyan">│ ┌────────────┐   ┌──────┐                 │</text>
+    <text x="290" y="371" class="cyan">│ │ npm run ♡  │   │ bots │                 │</text>
+    <text x="290" y="397" class="cyan">│ │ deploy ++  │   │ zines│                 │</text>
+    <text x="290" y="423" class="mint">╰────────────────────────────────────────────╯</text>
+    <text x="310" y="492" class="cyan">( •̀ᴗ•́)っ⚡</text>
+    <text x="735" y="492" class="rose">(✿ ♥‿♥)っ✨</text>
+    <text x="190" y="584" class="caption ink">C. descubre que ese caos tambien era ternura.</text>
+  </g>
+
+  <g class="scene s5 mono">
+    <text x="248" y="142" class="gold">capitulo 5: codigo como cortejo</text>
+    <text x="385" y="225" class="mint">╭──────────────────────────────╮</text>
+    <text x="385" y="251" class="mint">│ while (amor) {               │</text>
+    <text x="385" y="277" class="mint">│   aprendo++;                 │</text>
+    <text x="385" y="303" class="rose">│   brillo++;                  │</text>
+    <text x="385" y="329" class="cyan">│   construyo_para(C);         │</text>
+    <text x="385" y="355" class="mint">│ }                            │</text>
+    <text x="385" y="381" class="mint">╰──────────────────────────────╯</text>
+    <text x="150" y="285" class="cyan">( •̀ᴗ•́)っ💻</text>
+    <text x="920" y="285" class="rose">(♥‿♥✿)っ💕</text>
+    <text x="278" y="505" class="caption ink">C. a sus amigas: "tienen que ver lo que hizo J."</text>
+  </g>
+
+  <g class="scene s6 mono">
+    <text x="318" y="142" class="gold">capitulo 6: una llamada dificil</text>
+    <text x="140" y="235" class="rose">╭──────────────────────────╮</text>
+    <text x="140" y="261" class="rose">│ telefono de C.           │</text>
+    <text x="140" y="287" class="ink">│ C.: no se decirlo        │</text>
+    <text x="140" y="313" class="ink">│ se cruzaron las señales  │</text>
+    <text x="140" y="339" class="rose">╰──────────────────────────╯</text>
+    <text x="780" y="235" class="cyan">╭──────────────────────────╮</text>
+    <text x="780" y="261" class="cyan">│ telefono de J.           │</text>
+    <text x="780" y="287" class="ink">│ J.: si me importa        │</text>
+    <text x="780" y="313" class="ink">│ esto fue real            │</text>
+    <text x="780" y="339" class="cyan">╰──────────────────────────╯</text>
+    <text x="565" y="300" class="red">≈≈≈≈≈≈≈</text>
+    <text x="310" y="548" class="caption ink">No fue falta de amor. Fueron señales cruzadas.</text>
+  </g>
+
+  <g class="scene s7 mono">
+    <text x="380" y="142" class="gold">capitulo 7: CDMX vacia</text>
+    <text x="250" y="236" class="dim">        |\                 _                 /|</text>
+    <text x="250" y="262" class="dim">   _    | \      __       | |       __      / |     _</text>
+    <text x="250" y="288" class="dim">  | |  _|__\_   |  |   ___| |___   |  |  _/__|_   | |</text>
+    <text x="250" y="314" class="dim"> _| |_| [] []|__|[]|__|[] [] []|__|[]|__| [] []|_| |_</text>
+    <text x="250" y="340" class="dim">|_ CDMX ___ vacia ___ Reforma ___ noche ___ sin C. _|</text>
+    <text x="910" y="190" class="violet">☾</text>
+    <text x="590" y="420" class="cyan">  .-^-.</text>
+    <text x="590" y="446" class="cyan"> (._. )</text>
+    <text x="590" y="472" class="cyan"> /づ  づ</text>
+    <text x="190" y="584" class="caption ink">La ciudad seguia prendida, pero J. estaba en pausa.</text>
+  </g>
+
+  <g class="scene s8 mono">
+    <text x="214" y="170" class="caption gold">I'll see you in another life when we are both cats</text>
+    <g class="left-cat">
+      <text x="310" y="330" class="cyan"> /\_/\</text>
+      <text x="310" y="356" class="cyan">( o.o )</text>
+      <text x="310" y="382" class="cyan"> &gt; ^ &lt;</text>
+      <text x="342" y="430" class="cyan">J.</text>
+    </g>
+    <g class="right-cat">
+      <text x="880" y="330" class="rose">/\_/\ </text>
+      <text x="880" y="356" class="rose">( o.o )</text>
+      <text x="880" y="382" class="rose">&gt; ^ &lt; </text>
+      <text x="912" y="430" class="rose">C.</text>
+    </g>
+    <text x="610" y="370" class="rose pulse">♡ 💕 ♡</text>
+    <text x="395" y="560" class="caption mint">miau miau, destino encontrado ♡</text>
+  </g>
+
+  <rect x="34" y="682" width="1212" height="4" fill="#ffffff" opacity="0.08"/>
+  <rect class="progress" x="34" y="682" width="1212" height="4" fill="url(#bar)"/>
+</svg>
