@@ -1,0 +1,555 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>honeymoon - live private cut</title>
+  <style>
+    :root {
+      color-scheme: dark;
+      --bg: #06070b;
+      --ink: #f8f3ff;
+      --dim: #8c8996;
+      --rose: #ff79c6;
+      --cyan: #8be9fd;
+      --gold: #f1fa8c;
+      --mint: #50fa7b;
+      --violet: #bd93f9;
+      --red: #ff5555;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      background:
+        radial-gradient(circle at 18% 18%, rgba(255, 121, 198, 0.13), transparent 32%),
+        radial-gradient(circle at 78% 12%, rgba(139, 233, 253, 0.12), transparent 28%),
+        linear-gradient(180deg, #06070b 0%, #10111c 58%, #050508 100%);
+      color: var(--ink);
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      overflow: hidden;
+    }
+
+    .shell {
+      min-height: 100vh;
+      display: grid;
+      place-items: center;
+      padding: 24px;
+    }
+
+    .stage {
+      width: min(96vw, 1280px);
+      aspect-ratio: 16 / 9;
+      position: relative;
+      overflow: hidden;
+      border: 1px solid rgba(255, 255, 255, 0.16);
+      border-radius: 10px;
+      background:
+        linear-gradient(180deg, rgba(255,255,255,0.05), rgba(255,255,255,0)),
+        #05060a;
+      box-shadow: 0 28px 90px rgba(0, 0, 0, 0.58);
+    }
+
+    .scanlines {
+      pointer-events: none;
+      position: absolute;
+      inset: 0;
+      background: repeating-linear-gradient(
+        to bottom,
+        rgba(255,255,255,0.035),
+        rgba(255,255,255,0.035) 1px,
+        transparent 1px,
+        transparent 4px
+      );
+      mix-blend-mode: screen;
+      opacity: 0.28;
+    }
+
+    .screen {
+      position: absolute;
+      inset: 0;
+      margin: 0;
+      padding: clamp(16px, 3vw, 42px);
+      white-space: pre;
+      color: var(--ink);
+      font-family: "Fira Code", "Cascadia Mono", "SFMono-Regular", Menlo, Consolas, monospace;
+      font-size: clamp(9px, 1.22vw, 18px);
+      line-height: 1.18;
+      letter-spacing: 0;
+      text-shadow: 0 0 12px rgba(255, 121, 198, 0.16);
+    }
+
+    .caption {
+      position: absolute;
+      left: 4%;
+      right: 4%;
+      bottom: 4%;
+      min-height: 48px;
+      display: grid;
+      place-items: center;
+      color: var(--ink);
+      text-align: center;
+      font-size: clamp(15px, 2.1vw, 30px);
+      font-weight: 650;
+      text-shadow: 0 2px 28px rgba(0,0,0,0.9);
+    }
+
+    .hud {
+      position: absolute;
+      top: 16px;
+      left: 18px;
+      right: 18px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      color: rgba(248, 243, 255, 0.62);
+      font-size: 12px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .bar {
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      height: 4px;
+      background: rgba(255,255,255,0.08);
+    }
+
+    .progress {
+      height: 100%;
+      width: 0%;
+      background: linear-gradient(90deg, var(--cyan), var(--rose), var(--gold));
+      box-shadow: 0 0 20px rgba(255, 121, 198, 0.7);
+    }
+
+    .overlay {
+      position: absolute;
+      inset: 0;
+      display: grid;
+      place-items: center;
+      padding: 32px;
+      background: rgba(5, 6, 10, 0.82);
+      backdrop-filter: blur(10px);
+      transition: opacity 0.35s ease;
+    }
+
+    .overlay.hidden {
+      pointer-events: none;
+      opacity: 0;
+    }
+
+    .panel {
+      max-width: 680px;
+      text-align: center;
+    }
+
+    h1 {
+      margin: 0 0 10px;
+      font-size: clamp(42px, 8vw, 96px);
+      line-height: 0.9;
+      color: var(--rose);
+      letter-spacing: 0;
+      font-weight: 850;
+    }
+
+    .panel p {
+      margin: 0 auto 22px;
+      color: rgba(248, 243, 255, 0.78);
+      font-size: clamp(15px, 2vw, 20px);
+      line-height: 1.45;
+    }
+
+    button {
+      appearance: none;
+      border: 1px solid rgba(255,255,255,0.22);
+      background: rgba(255,255,255,0.08);
+      color: var(--ink);
+      border-radius: 999px;
+      padding: 13px 22px;
+      font-size: 15px;
+      font-weight: 700;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background: rgba(255,255,255,0.14);
+    }
+
+    .note {
+      margin-top: 14px;
+      color: rgba(248, 243, 255, 0.5);
+      font-size: 12px;
+    }
+
+    .rose { color: var(--rose); }
+    .cyan { color: var(--cyan); }
+    .gold { color: var(--gold); }
+    .mint { color: var(--mint); }
+    .violet { color: var(--violet); }
+    .red { color: var(--red); }
+    .dim { color: var(--dim); }
+  </style>
+</head>
+<body>
+  <main class="shell">
+    <section class="stage" aria-label="honeymoon live private cut">
+      <div class="hud">
+        <span>private live cut</span>
+        <span>J. + C.</span>
+      </div>
+      <pre id="screen" class="screen"></pre>
+      <div id="caption" class="caption"></div>
+      <div class="scanlines"></div>
+      <div class="bar"><div id="progress" class="progress"></div></div>
+      <div id="overlay" class="overlay">
+        <div class="panel">
+          <h1>honeymoon</h1>
+          <p>Una carta de amor hecha con codigo, un agente de IA, una terminal y dos iniciales que nadie mas necesita conocer.</p>
+          <button id="play">Iniciar pieza en vivo</button>
+          <div class="note">Pantalla completa recomendada. Espacio pausa/reanuda. R reinicia.</div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    const screen = document.getElementById("screen");
+    const caption = document.getElementById("caption");
+    const progress = document.getElementById("progress");
+    const overlay = document.getElementById("overlay");
+    const playButton = document.getElementById("play");
+
+    const totalDuration = 142000;
+    let audioContext = null;
+    let musicTimer = null;
+    let startTime = 0;
+    let pausedAt = 0;
+    let paused = false;
+    let running = false;
+
+    const faces = {
+      J: {
+        shy: ["  .-^-.", " ( •‿•)", " /づ💻づ"],
+        love: ["  .-^-.", " (♡‿♡)", " /づ♡づ"],
+        wow: ["  .-^-.", " ( •̀ᴗ•́)", " /づ⚡づ"],
+        sad: ["  .-^-.", " (._. )", " /づ  づ"],
+        cat: [" /\\_/\\", "( o.o )", " > ^ <"]
+      },
+      C: {
+        shy: ["  .-^-.", " (◕‿◕✿)", " /づ🌙づ"],
+        love: ["  .-^-.", " (♥‿♥✿)", " /づ💕づ"],
+        wow: ["  .-^-.", " (✿ ♥‿♥)", " /づ✨づ"],
+        sad: ["  .-^-.", " (._.✿)", " /づ  づ"],
+        cat: ["/\\_/\\ ", "( o.o )", "> ^ < "]
+      }
+    };
+
+    const chapters = [
+      { at: 0, title: "honeymoon", text: "Ella penso que hablaba con un humano. Era su agente. Pero el amor era de J." },
+      { at: 15000, title: "capitulo 1", text: "J. y C. eran dos inadaptados cute en una ciudad demasiado grande." },
+      { at: 30000, title: "capitulo 2", text: "El agente no reemplazo a nadie. Solo tradujo cuidado a palabras." },
+      { at: 46000, title: "capitulo 3", text: "Primera cita: concierto, nervios, luces, besitos y caritas felices." },
+      { at: 63000, title: "capitulo 4", text: "Despues, C. vio el cuarto de J.: codigo, pantallas, bots, caos bonito." },
+      { at: 79000, title: "capitulo 5", text: "J. construia sistemas vivos. C. lo veia crear y se enamoraba mas." },
+      { at: 96000, title: "capitulo 6", text: "Luego vino una llamada dificil. No fue falta de amor. Fueron senales cruzadas." },
+      { at: 111000, title: "capitulo 7", text: "CDMX siguio encendida, pero J. camino solo por una ciudad en pausa." },
+      { at: 126000, title: "final", text: "I'll see you in another life when we are both cats" }
+    ];
+
+    function cls(name, text) {
+      return `<span class="${name}">${escapeHtml(text)}</span>`;
+    }
+
+    function escapeHtml(value) {
+      return String(value)
+        .replaceAll("&", "&amp;")
+        .replaceAll("<", "&lt;")
+        .replaceAll(">", "&gt;");
+    }
+
+    function line(width, char = "─") {
+      return char.repeat(width);
+    }
+
+    function pad(value, width) {
+      const s = String(value);
+      return s + " ".repeat(Math.max(0, width - s.length));
+    }
+
+    function put(canvas, x, y, lines, klass = "") {
+      lines.forEach((text, row) => {
+        if (y + row < 0 || y + row >= canvas.length) return;
+        const raw = text;
+        const safe = klass ? cls(klass, raw) : escapeHtml(raw);
+        canvas[y + row][x] = safe;
+      });
+    }
+
+    function makeCanvas() {
+      return Array.from({ length: 31 }, () => []);
+    }
+
+    function renderCanvas(canvas) {
+      const rows = [];
+      for (let y = 0; y < canvas.length; y++) {
+        const cells = canvas[y];
+        let row = "";
+        for (let x = 0; x < 90; x++) {
+          row += cells[x] ?? " ";
+        }
+        rows.push(row);
+      }
+      return rows.join("\n");
+    }
+
+    function currentChapter(t) {
+      let chapter = chapters[0];
+      for (const candidate of chapters) {
+        if (t >= candidate.at) chapter = candidate;
+      }
+      return chapter;
+    }
+
+    function stars(canvas, t) {
+      for (let i = 0; i < 78; i++) {
+        const x = Math.floor((Math.sin(i * 13.17) * 9999 % 1 + 1) % 1 * 88);
+        const y = Math.floor((Math.sin(i * 7.91) * 9999 % 1 + 1) % 1 * 29);
+        const drift = Math.floor(Math.sin(t / 1800 + i) * 2);
+        const chars = [".", "·", "*", "✦", "♡"];
+        put(canvas, Math.max(0, Math.min(88, x + drift)), y, [chars[(i + Math.floor(t / 700)) % chars.length]], i % 5 === 0 ? "rose" : "dim");
+      }
+    }
+
+    function titleScene(canvas, t) {
+      const art = [
+        " __",
+        "/ /_  ____  ____  ___  __  ______ ___  ____  ____  ____",
+        "/ __ \\/ __ \\/ __ \\/ _ \\/ / / / __ `__ \\/ __ \\/ __ \\/ __ \\",
+        "/ / / / /_/ / / / /  __/ /_/ / / / / / / /_/ / /_/ / / / /",
+        "/_/ /_/\\____/_/ /_/\\___/\\__, /_/ /_/ /_/\\____/\\____/_/ /_/",
+        "                       /____/"
+      ];
+      put(canvas, 12, 9, art, "rose");
+      put(canvas, 29, 17, ["♡  la historia de J. y C.  ♡"], "gold");
+      put(canvas, 19, 20, ["una terminal, un agente, memoria y amor"], "cyan");
+    }
+
+    function outcasts(canvas, t) {
+      put(canvas, 12, 10, ["╭────────────────────╮", "│        J.          │", "│                    │", "│                    │", "│                    │", "╰────────────────────╯"], "cyan");
+      put(canvas, 56, 10, ["╭────────────────────╮", "│        C.          │", "│                    │", "│                    │", "│                    │", "╰────────────────────╯"], "rose");
+      put(canvas, 17, 13 + bob(t), faces.J.shy, "cyan");
+      put(canvas, 60, 13 - bob(t), faces.C.shy, "rose");
+      put(canvas, 22, 23, ["dos personas raras encontrando una frecuencia suave"], "gold");
+    }
+
+    function hinge(canvas, t) {
+      put(canvas, 28, 6, ["╭────────────────────────────────╮", "│          Hinge.exe             │", "├────────────────────────────────┤", "│ C. 🌙                 J. 💻    │", "│                                │", "│ > agente IA: ayudo a J.        │", "│ < C.: pense que era el jaja    │", "│ > agente IA: solo traduzco     │", "│ > J.: el corazon si era mio    │", "│                                │", "│ escribiendo...                 │", "╰────────────────────────────────╯"], "violet");
+      put(canvas, 7, 14, faces.J.shy, "cyan");
+      put(canvas, 72, 14, faces.C.wow, "rose");
+    }
+
+    function concert(canvas, t) {
+      put(canvas, 5, 23, [line(80, "═")], "dim");
+      const carX = 8 + Math.min(46, Math.floor((t - 46000) / 360));
+      put(canvas, carX, 19, ["      ______", "  ___/[] []\\___", " /   J.   C.   \\", "o---💗----💗---o"], "cyan");
+      put(canvas, 18, 7, ["╭────────────────────────────────────────────────────╮", "│              ♪ ♫ 😘 💕 😚 💖 ♫ ♪                 │", "│                                                    │", "│                                                    │", "│                                                    │", "╰────────────────────────────────────────────────────╯"], "violet");
+      put(canvas, 26, 11 + bob(t), faces.J.love, "cyan");
+      put(canvas, 54, 11 - bob(t), faces.C.love, "rose");
+      put(canvas, 41, 13, ["💋 ♡ 💋"], "gold");
+    }
+
+    function room(canvas, t) {
+      put(canvas, 18, 7, ["             /\\________________/\\", "           /                        \\", "╭────────────────────────────────────────────╮", "│ cuarto de J.                               │", "│ [✨] shelves: AI / code / dreams           │", "│ ┌────────────┐   ┌──────┐                 │", "│ │ npm run ♡  │   │ bots │                 │", "│ │ deploy ++  │   │ zines│                 │", "│ └────────────┘   └──────┘                 │", "╰────────────────────────────────────────────╯"], "mint");
+      put(canvas, 24, 19, faces.J.wow, "cyan");
+      put(canvas, 54, 19, faces.C.wow, "rose");
+      put(canvas, 28, 25, ["C. descubre que ese caos tambien era ternura"], "gold");
+    }
+
+    function codeCourtship(canvas, t) {
+      const core = [
+        "╭──────────────────────────────╮",
+        "│ while (amor) {               │",
+        "│   aprendo++;                 │",
+        "│   brillo++;                  │",
+        "│   construyo_para(C);         │",
+        "│ }                            │",
+        "╰──────────────────────────────╯"
+      ];
+      put(canvas, 30, 9, core, "mint");
+      put(canvas, 9, 10, faces.J.wow, "cyan");
+      put(canvas, 70, 10, faces.C.love, "rose");
+      const orbit = ["agent-core.ts", "love-ui.tsx", "deploy.sh", "memory.json"];
+      orbit.forEach((word, i) => {
+        const x = 26 + Math.floor(Math.cos(t / 900 + i * 1.7) * 22);
+        const y = 20 + Math.floor(Math.sin(t / 900 + i * 1.7) * 4);
+        put(canvas, x, y, [word], i % 2 ? "violet" : "gold");
+      });
+      put(canvas, 17, 27, ["C. a sus amigas: tienen que ver lo que hizo J. 😭💻✨"], "rose");
+    }
+
+    function call(canvas, t) {
+      put(canvas, 9, 8, ["╭──────────────────────────╮", "│ telefono de C.           │", "│ C.: no se decirlo        │", "│ se cruzaron las señales  │", "│                          │", "│                          │", "╰──────────────────────────╯"], "rose");
+      put(canvas, 54, 8, ["╭──────────────────────────╮", "│ telefono de J.           │", "│ J.: si me importa        │", "│ esto fue real            │", "│                          │", "│                          │", "╰──────────────────────────╯"], "cyan");
+      put(canvas, 26, 16, faces.C.sad, "rose");
+      put(canvas, 68, 16, faces.J.sad, "cyan");
+      put(canvas, 38, 15, ["≈≈≈≈≈≈≈"], "red");
+    }
+
+    function cdmx(canvas, t) {
+      const skyline = [
+        "        |\\                 _                 /|",
+        "   _    | \\      __       | |       __      / |     _",
+        "  | |  _|__\\_   |  |   ___| |___   |  |  _/__|_   | |",
+        " _| |_| [] []|__|[]|__|[] [] []|__|[]|__| [] []|_| |_",
+        "|_ CDMX ___ vacia ___ Reforma ___ noche ___ sin C. _|"
+      ];
+      put(canvas, 10, 10, skyline, "dim");
+      put(canvas, 68, 6, ["☾"], "violet");
+      put(canvas, 0, 22, [line(90, "═")], "dim");
+      put(canvas, 41, 18 + bob(t), faces.J.sad, "cyan");
+      put(canvas, 19, 26, ["la ciudad seguia prendida, pero J. estaba en pausa"], "rose");
+    }
+
+    function cats(canvas, t) {
+      put(canvas, 17, 7, ["I'll see you in another life when we are both cats"], "gold");
+      const approach = Math.min(22, Math.floor((t - 126000) / 520));
+      put(canvas, 18 + approach, 15, faces.J.cat, "cyan");
+      put(canvas, 65 - approach, 15, faces.C.cat, "rose");
+      if (approach > 12) {
+        put(canvas, 43, 16, ["♡", "💕", "♡"], "rose");
+      }
+      if (approach > 20) {
+        put(canvas, 34, 23, ["miau miau, destino encontrado ♡"], "mint");
+      }
+    }
+
+    function bob(t) {
+      return Math.round(Math.sin(t / 750));
+    }
+
+    function draw(t) {
+      const canvas = makeCanvas();
+      stars(canvas, t);
+      if (t < 15000) titleScene(canvas, t);
+      else if (t < 30000) outcasts(canvas, t);
+      else if (t < 46000) hinge(canvas, t);
+      else if (t < 63000) concert(canvas, t);
+      else if (t < 79000) room(canvas, t);
+      else if (t < 96000) codeCourtship(canvas, t);
+      else if (t < 111000) call(canvas, t);
+      else if (t < 126000) cdmx(canvas, t);
+      else cats(canvas, t);
+
+      const chapter = currentChapter(t);
+      screen.innerHTML = renderCanvas(canvas);
+      caption.textContent = chapter.text;
+      progress.style.width = `${Math.min(100, (t / totalDuration) * 100)}%`;
+      document.querySelector(".hud span").textContent = chapter.title;
+    }
+
+    function midiToFreq(midi) {
+      return 440 * Math.pow(2, (midi - 69) / 12);
+    }
+
+    function note(ctx, when, midi, duration, gain = 0.07) {
+      const osc = ctx.createOscillator();
+      const env = ctx.createGain();
+      osc.type = "square";
+      osc.frequency.value = midiToFreq(midi);
+      env.gain.setValueAtTime(0, when);
+      env.gain.linearRampToValueAtTime(gain, when + 0.015);
+      env.gain.exponentialRampToValueAtTime(0.0001, when + duration);
+      osc.connect(env).connect(ctx.destination);
+      osc.start(when);
+      osc.stop(when + duration + 0.02);
+    }
+
+    function startMusic() {
+      audioContext = new AudioContext();
+      const bpm = 78;
+      const beat = 60 / bpm;
+      const melody = [69, 72, 76, 74, 72, 69, 67, 69, 72, 76, 77, 76, 74, 72, 69, 72, 74, 76, 79, 76];
+      const bass = [45, 52, 41, 48, 50, 52];
+      let step = 0;
+      musicTimer = setInterval(() => {
+        const now = audioContext.currentTime + 0.03;
+        const m = melody[step % melody.length];
+        const b = bass[Math.floor(step / 4) % bass.length];
+        note(audioContext, now, m, beat * 0.82, 0.045);
+        note(audioContext, now + beat * 0.25, m + 7, beat * 0.36, 0.022);
+        note(audioContext, now, b, beat * 1.6, 0.032);
+        step++;
+      }, beat * 500);
+    }
+
+    function stopMusic() {
+      if (musicTimer) clearInterval(musicTimer);
+      musicTimer = null;
+      if (audioContext) audioContext.close();
+      audioContext = null;
+    }
+
+    function start() {
+      overlay.classList.add("hidden");
+      running = true;
+      paused = false;
+      pausedAt = 0;
+      startTime = performance.now();
+      stopMusic();
+      startMusic();
+      requestAnimationFrame(loop);
+    }
+
+    function loop(now) {
+      if (!running || paused) return;
+      const t = now - startTime;
+      draw(t);
+      if (t >= totalDuration) {
+        running = false;
+        stopMusic();
+        return;
+      }
+      requestAnimationFrame(loop);
+    }
+
+    function togglePause() {
+      if (!running) return;
+      if (paused) {
+        paused = false;
+        startTime = performance.now() - pausedAt;
+        if (!audioContext) startMusic();
+        requestAnimationFrame(loop);
+      } else {
+        paused = true;
+        pausedAt = performance.now() - startTime;
+        stopMusic();
+      }
+    }
+
+    function reset() {
+      stopMusic();
+      running = false;
+      paused = false;
+      overlay.classList.remove("hidden");
+      draw(0);
+    }
+
+    playButton.addEventListener("click", start);
+    window.addEventListener("keydown", (event) => {
+      if (event.code === "Space") {
+        event.preventDefault();
+        togglePause();
+      }
+      if (event.key.toLowerCase() === "r") reset();
+    });
+
+    draw(0);
+  </script>
+</body>
+</html>

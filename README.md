@@ -22,6 +22,29 @@ Opciones utiles:
 ./honeymoon.py --audio-file "/ruta/a/audio-8bit-legal.mp3"
 ```
 
+## Live private cut
+
+Para mostrar la pieza desde el repo privado sin instalar dependencias, abre:
+
+```bash
+xdg-open live/honeymoon-live.html
+```
+
+Tambien puedes servir el repo localmente:
+
+```bash
+python3 -m http.server 8080
+```
+
+Y abrir:
+
+```text
+http://127.0.0.1:8080/live/honeymoon-live.html
+```
+
+El navegador pide un click para iniciar el audio. El archivo es autocontenido:
+no usa assets externos ni red.
+
 ## Estado actual
 
 - Animacion terminal con narrativa completa.
@@ -29,6 +52,7 @@ Opciones utiles:
 - Iniciales `J.` y `C.` para cuidar privacidad.
 - Caritas ASCII que cambian de emocion segun la escena.
 - Cierre con CDMX vacia y dos gatos enamorandose.
+- Version live privada en navegador para demo/screen share.
 
 ## Intencion
 
