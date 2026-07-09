@@ -1,16 +1,16 @@
 <p align="center">
   <img
     width="100%"
-    src="https://capsule-render.vercel.app/api?type=blur&height=230&color=0:06070b,45:bd93f9,70:ff79c6,100:8be9fd&text=honeymoon&fontColor=f8f3ff&fontAlign=50&fontAlignY=45&desc=una%20carta%20de%20amor%20hecha%20con%20codigo&descAlign=50&descAlignY=66&animation=twinkling"
+    src="https://capsule-render.vercel.app/api?type=blur&height=230&color=0:06070b,45:bd93f9,70:ff79c6,100:8be9fd&text=honeymoon&fontColor=f8f3ff&fontAlign=50&fontAlignY=45&desc=a%20love%20story%20made%20with%20code&descAlign=50&descAlignY=66&animation=twinkling"
     alt="honeymoon"
   />
 </p>
 
 <p align="center">
-  <a href="#ver-la-pieza"><img alt="Open in browser" src="https://img.shields.io/badge/open-index.html-ff79c6?style=for-the-badge&logo=html5&logoColor=white"></a>
-  <a href="#en-terminal"><img alt="Run in terminal" src="https://img.shields.io/badge/run-python3-8be9fd?style=for-the-badge&logo=python&logoColor=111111"></a>
-  <a href="#stack"><img alt="No dependencies" src="https://img.shields.io/badge/deps-zero-50fa7b?style=for-the-badge&logo=dependabot&logoColor=111111"></a>
-  <a href="#privacidad"><img alt="Privacy first" src="https://img.shields.io/badge/privacy-initials_only-bd93f9?style=for-the-badge&logo=github&logoColor=white"></a>
+  <a href="#watch-the-piece"><img alt="Watch the piece" src="https://img.shields.io/badge/watch-the_piece-ff79c6?style=for-the-badge&logo=github&logoColor=white"></a>
+  <a href="#run-it"><img alt="Run locally" src="https://img.shields.io/badge/run-locally-8be9fd?style=for-the-badge&logo=python&logoColor=111111"></a>
+  <a href="#stack"><img alt="Built with code" src="https://img.shields.io/badge/built_with-code-50fa7b?style=for-the-badge&logo=javascript&logoColor=111111"></a>
+  <a href="#privacy"><img alt="Privacy first" src="https://img.shields.io/badge/privacy-initials_only-bd93f9?style=for-the-badge&logo=github&logoColor=white"></a>
 </p>
 
 <p align="center">
@@ -24,190 +24,137 @@
 
 <p align="center">
   <img
-    src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=700&size=24&duration=3600&pause=900&color=FF79C6&center=true&vCenter=true&width=760&lines=ASCII%2C+ANSI%2C+Web+Audio+y+memoria;una+terminal+tambien+puede+recordar;AI+como+puente%2C+no+como+protagonista"
+    src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=700&size=24&duration=3600&pause=900&color=FF79C6&center=true&vCenter=true&width=780&lines=I+built+an+AI+agent+to+flirt+for+me;the+agent+opened+the+door;the+love+was+mine"
     alt="honeymoon typing intro"
   />
 </p>
+
+## What This Is
+
+This is my love story.
+
+I built an AI agent to help me flirt on Hinge. It wrote with my voice, helped me
+say the brave thing, and opened a door between two people: J. and C.
+
+She thought she was talking to a human.
+
+It was my agent.
+
+But the love was mine.
+
+`honeymoon` turns that story into a tiny terminal film: ASCII characters, neon
+colors, chiptune music, a first date, a room full of code, crossed signals,
+CDMX at night, and one final promise:
+
+> I'll see you in another life when we are both cats.
+
+## Watch The Piece
+
+GitHub does not play local HTML with audio inside a README, so this is the
+silent animated preview. Open the project locally for the full version with
+sound.
 
 <p align="center">
   <a href="live/honeymoon-github.svg">
     <img
       src="live/honeymoon-github.svg"
-      alt="honeymoon GitHub public preview"
+      alt="honeymoon animated video preview"
       width="100%"
     />
   </a>
 </p>
 
-> Una carta de amor contada como si una terminal tambien pudiera recordar.
+## The Story
 
-`honeymoon` es una historia de amor hecha con codigo: ASCII, color ANSI,
-animacion de terminal, musica 8-bit original y una pequena verdad humana sobre
-J., C. y un agente de IA que sirvio como puente.
+- I made an AI agent to help me flirt on Hinge.
+- The agent helped translate care into words.
+- C. and I met in a huge city.
+- We had a first date, music, nerves, kisses, and a lot of tenderness.
+- She saw my world: code, agents, screens, bots, and beautiful chaos.
+- Code became a way of saying: I like you, I see you, I am trying.
+- Then the signals crossed.
+- CDMX stayed bright, but something went quiet.
+- The ending imagines another life where we meet again as cats.
 
-No es una demo tecnica. Es una memoria.
+The AI is not the lover in this story. The AI is the bridge.
 
-Dos personas se encontraron en una ciudad enorme. Un mensaje asistido por IA
-abrio una puerta. Hubo una primera cita, un concierto, nervios, besos, una
-habitacion llena de codigo, sistemas vivos, ternura rara, senales cruzadas,
-CDMX vacia y una promesa final:
+## Run It
 
-> I'll see you in another life when we are both cats.
+### Browser Version
 
-## La historia
-
-Ella penso que hablaba con un humano.
-
-Era su agente.
-
-Pero el amor era de J.
-
-Esa es la chispa de `honeymoon`: una escena contemporanea donde la tecnologia no
-reemplaza el afecto, sino que lo traduce. El agente de IA no es el protagonista
-ni el amante. Es el puente. Lo que importa es lo que habia del otro lado: dos
-personas intentando entenderse.
-
-La pieza sigue ese arco con lenguaje de terminal:
-
-- J. y C. aparecen como dos caritas raras en una ciudad demasiado grande.
-- Un agente ayuda a convertir cuidado en palabras.
-- La primera cita se vuelve luces, musica, besitos y nervios.
-- C. descubre el mundo de J.: codigo, bots, pantallas, caos bonito.
-- El codigo deja de ser herramienta y se vuelve cortejo.
-- Una llamada dificil cruza las senales.
-- CDMX sigue encendida, pero algo queda en pausa.
-- Al final, dos gatos se encuentran en otra vida.
-
-## Ver la pieza
-
-### En navegador
-
-Abre:
+Open:
 
 ```text
 index.html
 ```
 
-Es autocontenido: no necesita build, dependencias ni red. Al abrirlo, la pieza
-arranca como una terminal fullscreen. El audio intenta activarse al inicio; si
-el navegador lo bloquea, toca/clickea la terminal o el boton de musica.
+It is self-contained. No build, no install, no network. The browser version runs
+as a fullscreen terminal and includes Web Audio music after you click or tap.
 
-Tambien puede publicarse como sitio estatico en GitHub Pages, Vercel, Netlify o
-cualquier hosting que sirva HTML. Como `index.html` vive en la raiz, la URL abre
-directo en la obra.
-
-### En terminal
+### Terminal Version
 
 ```bash
 python3 honeymoon.py --no-audio
 ```
 
-O, si tu sistema tiene un reproductor compatible para audio generado localmente:
+With local generated audio:
 
 ```bash
 python3 honeymoon.py
 ```
 
-Opciones utiles:
+Other options:
 
 ```bash
 python3 honeymoon.py --song waltz
 python3 honeymoon.py --song both
 python3 honeymoon.py --speed 0.9
-python3 honeymoon.py --audio-file "/ruta/a/honeymoon-8bit.mp3"
+python3 honeymoon.py --audio-file "/path/to/honeymoon-8bit.mp3"
 ```
 
 ## Stack
 
-| Capa | Lenguajes / librerias | Uso en la pieza |
+| Layer | Languages / APIs | What it does |
 | --- | --- | --- |
-| Web cut | HTML5, CSS3, JavaScript vanilla | Terminal fullscreen, escenas ASCII, controles, progreso y audio en navegador. |
-| Audio web | Web Audio API | Sintesis chiptune en vivo sin archivos externos. |
-| Terminal cut | Python 3, ANSI escape codes | Animacion en consola, color, timing, musica local y CLI. |
-| Python stdlib | `argparse`, `dataclasses`, `math`, `random`, `wave`, `tempfile`, `subprocess`, `shutil` | Configuracion, render terminal, generacion WAV y reproduccion opcional. |
-| Preview GitHub | SVG, CSS animations | Corte silencioso que GitHub puede renderizar dentro del README. |
-| Distribucion | GitHub Pages, Vercel, Netlify, static hosting | Publicacion directa como sitio estatico. |
+| Web cut | HTML5, CSS3, JavaScript | Fullscreen terminal film, scenes, controls, progress bar. |
+| Browser audio | Web Audio API | Original chiptune-style music in the browser. |
+| Terminal cut | Python 3, ANSI escape codes | Live console animation, colors, timing, and local audio. |
+| Python stdlib | `argparse`, `dataclasses`, `math`, `random`, `wave`, `tempfile`, `subprocess`, `shutil` | CLI, generated WAV music, playback, and terminal rendering. |
+| GitHub preview | SVG, CSS animations | Silent animated preview that renders directly in the README. |
+| Hosting | GitHub Pages, Vercel, Netlify | Static deployment with no backend required. |
 
-## Features
-
-- `index.html` listo para abrir en navegador, sin instalar paquetes.
-- `honeymoon.py` ejecutable en terminal con modo sin audio.
-- Musica 8-bit original generada localmente, no una melodia comercial copiada.
-- Version SVG animada para que GitHub muestre la obra desde el README.
-- Paleta terminal romantica: rose, cyan, gold, mint, violet y sombras.
-- Escenas con J., C., agente IA, concierto, cuarto nerd, CDMX y final de gatos.
-- Narrativa publica con iniciales para cuidar la intimidad.
-
-## Estructura
+## Files
 
 ```text
 .
-|-- index.html                  # experiencia web principal
-|-- honeymoon.py                # version viva para terminal
+|-- index.html                  # main browser version
+|-- honeymoon.py                # terminal version
 |-- live/
-|   |-- honeymoon-github.svg    # preview animado para README
-|   |-- honeymoon-live.html     # corte alternativo de navegador
+|   |-- honeymoon-github.svg    # animated README preview
+|   |-- honeymoon-live.html     # alternate browser cut
 |   `-- README.md
-|-- NARRATIVE_NOTES.md          # direccion emocional
-|-- PRODUCTION_PLAN.md          # ruta de produccion
-`-- FESTIVAL_STRATEGY.md        # estrategia de festival y publicacion
+|-- NARRATIVE_NOTES.md          # emotional direction
+|-- PRODUCTION_PLAN.md          # production roadmap
+`-- FESTIVAL_STRATEGY.md        # festival and release notes
 ```
 
-## Por que una terminal
+## Privacy
 
-Porque para J. el codigo no era una pose. Era lenguaje emocional.
+The public version uses initials: `J.` and `C.`
 
-La terminal aqui no intenta verse futurista por moda. Es el lugar donde una
-persona que construye aprende a decir: esto me importo, esto paso, esto dolio,
-esto todavia brilla.
+There are no full names, private screenshots, private messages, or identifying
+details. The feeling can be public. The people still deserve privacy.
 
-`honeymoon` usa texto, coordenadas, color, ritmo y pequenas criaturas ASCII para
-contar algo que normalmente se contaria con camaras. Es una pelicula hecha desde
-el lugar donde tambien nacen los programas.
+## Why A Terminal
 
-## IA y autoria
+Because code was the place where I knew how to be honest.
 
-Esta obra habla de IA sin convertirla en el alma de la obra.
+This is not a tech demo. It is a memory made from the tools I actually use:
+text, timing, color, sound, small systems, and a little bit of nerve.
 
-La IA aparece como mediadora: una herramienta que ayudo a escribir, ordenar,
-traducir o acercar. Pero el centro emocional es humano. La historia, la
-estructura, la memoria, el pudor, el dolor y el deseo de contarla pertenecen a
-la persona que la vivio.
+For one moment, code became a way to say:
 
-El punto no es "un agente enamoro a alguien".
-
-El punto es mas raro y mas humano:
-
-> alguien uso las herramientas de su tiempo para intentar amar mejor.
-
-## Privacidad
-
-La version publica usa iniciales: `J.` y `C.`
-
-No hay nombres completos, capturas de conversaciones privadas ni datos que
-busquen exponer a nadie. La historia se comparte porque el sentimiento merece
-existir en el mundo, pero la intimidad de las personas sigue importando.
-
-## Roadmap
-
-- Modo recordable con timing determinista.
-- Aspect ratios `16:9` y `9:16` para festival y social cut.
-- Export workflow documentado para captura limpia.
-- Subtitulos en ingles y espanol.
-- Stills, poster, logline y statement de direccion.
-
-## Estado
-
-`honeymoon` ya puede leerse, abrirse y sentirse. La version actual es una pieza
-publica pequena, tierna y completa, pero tambien es una semilla para cortes mas
-grandes: festival, video social, instalacion o performance de codigo en vivo.
-
-Si llegaste aqui sin conocer a J. ni a C., esa es la idea.
-
-No necesitas conocerlos.
-
-Solo necesitas entender que, por un momento, el codigo fue una forma de decir
-"te quiero".
+> I love you.
 
 <p align="center">
   <img
