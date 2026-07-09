@@ -3,11 +3,13 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>honeymoon - live cut</title>
+  <title>honeymoon terminal</title>
   <style>
     :root {
       color-scheme: dark;
       --bg: #06070b;
+      --panel: #05060a;
+      --line: rgba(255, 255, 255, 0.16);
       --ink: #f8f3ff;
       --dim: #8c8996;
       --rose: #ff79c6;
@@ -25,9 +27,10 @@
     body {
       margin: 0;
       min-height: 100vh;
+      min-height: 100dvh;
       background:
-        radial-gradient(circle at 18% 18%, rgba(255, 121, 198, 0.13), transparent 32%),
-        radial-gradient(circle at 78% 12%, rgba(139, 233, 253, 0.12), transparent 28%),
+        linear-gradient(135deg, rgba(255, 121, 198, 0.08) 0 1px, transparent 1px 16px),
+        linear-gradient(225deg, rgba(139, 233, 253, 0.07) 0 1px, transparent 1px 18px),
         linear-gradient(180deg, #06070b 0%, #10111c 58%, #050508 100%);
       color: var(--ink);
       font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
@@ -35,23 +38,104 @@
     }
 
     .shell {
+      width: 100%;
       min-height: 100vh;
+      min-height: 100dvh;
       display: grid;
       place-items: center;
-      padding: 24px;
+      padding: 12px;
     }
 
     .stage {
-      width: min(96vw, 1280px);
+      width: 100%;
+      max-width: 1180px;
+      max-height: calc(100dvh - 24px);
       aspect-ratio: 16 / 9;
       position: relative;
       overflow: hidden;
-      border: 1px solid rgba(255, 255, 255, 0.16);
-      border-radius: 10px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
       background:
-        linear-gradient(180deg, rgba(255,255,255,0.05), rgba(255,255,255,0)),
-        #05060a;
+        linear-gradient(180deg, rgba(255,255,255,0.045), rgba(255,255,255,0)),
+        linear-gradient(90deg, rgba(139, 233, 253, 0.035), transparent 28%, rgba(255, 121, 198, 0.035) 72%, transparent),
+        var(--panel);
       box-shadow: 0 28px 90px rgba(0, 0, 0, 0.58);
+    }
+
+    .terminalbar {
+      position: absolute;
+      z-index: 3;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 42px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 0 12px;
+      border-bottom: 1px solid rgba(255,255,255,0.12);
+      background: rgba(12, 13, 21, 0.86);
+      color: rgba(248, 243, 255, 0.68);
+      font-family: "Fira Code", "Cascadia Mono", "SFMono-Regular", Menlo, Consolas, monospace;
+      font-size: 12px;
+    }
+
+    .lights {
+      display: flex;
+      gap: 7px;
+      flex: 0 0 auto;
+    }
+
+    .light {
+      width: 10px;
+      height: 10px;
+      border-radius: 999px;
+      box-shadow: 0 0 12px currentColor;
+    }
+
+    .light.rose { background: var(--rose); color: var(--rose); }
+    .light.gold { background: var(--gold); color: var(--gold); }
+    .light.mint { background: var(--mint); color: var(--mint); }
+
+    .path {
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+
+    .controls {
+      display: flex;
+      gap: 8px;
+      margin-left: auto;
+    }
+
+    button {
+      appearance: none;
+      width: 30px;
+      height: 30px;
+      display: grid;
+      place-items: center;
+      border: 1px solid rgba(255,255,255,0.18);
+      border-radius: 999px;
+      background: rgba(255,255,255,0.07);
+      color: var(--ink);
+      font-size: 15px;
+      line-height: 1;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background: rgba(255,255,255,0.14);
+    }
+
+    .audio-toggle {
+      color: var(--dim);
+    }
+
+    .audio-toggle.ready {
+      color: var(--gold);
+      border-color: rgba(241, 250, 140, 0.5);
+      box-shadow: 0 0 18px rgba(241, 250, 140, 0.18);
     }
 
     .scanlines {
@@ -71,13 +155,14 @@
 
     .screen {
       position: absolute;
-      inset: 0;
+      inset: 42px 0 82px;
       margin: 0;
-      padding: clamp(16px, 3vw, 42px);
+      padding: 22px 34px 10px;
       white-space: pre;
+      overflow: hidden;
       color: var(--ink);
       font-family: "Fira Code", "Cascadia Mono", "SFMono-Regular", Menlo, Consolas, monospace;
-      font-size: clamp(9px, 1.22vw, 18px);
+      font-size: var(--screen-font, 15px);
       line-height: 1.18;
       letter-spacing: 0;
       text-shadow: 0 0 12px rgba(255, 121, 198, 0.16);
@@ -87,22 +172,24 @@
       position: absolute;
       left: 4%;
       right: 4%;
-      bottom: 4%;
-      min-height: 48px;
+      bottom: 18px;
+      min-height: 46px;
       display: grid;
       place-items: center;
       color: var(--ink);
       text-align: center;
-      font-size: clamp(15px, 2.1vw, 30px);
+      font-size: 23px;
       font-weight: 650;
+      line-height: 1.2;
       text-shadow: 0 2px 28px rgba(0,0,0,0.9);
     }
 
     .hud {
       position: absolute;
-      top: 16px;
+      top: 56px;
       left: 18px;
       right: 18px;
+      z-index: 2;
       display: flex;
       align-items: center;
       justify-content: space-between;
@@ -128,65 +215,6 @@
       box-shadow: 0 0 20px rgba(255, 121, 198, 0.7);
     }
 
-    .overlay {
-      position: absolute;
-      inset: 0;
-      display: grid;
-      place-items: center;
-      padding: 32px;
-      background: rgba(5, 6, 10, 0.82);
-      backdrop-filter: blur(10px);
-      transition: opacity 0.35s ease;
-    }
-
-    .overlay.hidden {
-      pointer-events: none;
-      opacity: 0;
-    }
-
-    .panel {
-      max-width: 680px;
-      text-align: center;
-    }
-
-    h1 {
-      margin: 0 0 10px;
-      font-size: clamp(42px, 8vw, 96px);
-      line-height: 0.9;
-      color: var(--rose);
-      letter-spacing: 0;
-      font-weight: 850;
-    }
-
-    .panel p {
-      margin: 0 auto 22px;
-      color: rgba(248, 243, 255, 0.78);
-      font-size: clamp(15px, 2vw, 20px);
-      line-height: 1.45;
-    }
-
-    button {
-      appearance: none;
-      border: 1px solid rgba(255,255,255,0.22);
-      background: rgba(255,255,255,0.08);
-      color: var(--ink);
-      border-radius: 999px;
-      padding: 13px 22px;
-      font-size: 15px;
-      font-weight: 700;
-      cursor: pointer;
-    }
-
-    button:hover {
-      background: rgba(255,255,255,0.14);
-    }
-
-    .note {
-      margin-top: 14px;
-      color: rgba(248, 243, 255, 0.5);
-      font-size: 12px;
-    }
-
     .rose { color: var(--rose); }
     .cyan { color: var(--cyan); }
     .gold { color: var(--gold); }
@@ -194,44 +222,98 @@
     .violet { color: var(--violet); }
     .red { color: var(--red); }
     .dim { color: var(--dim); }
+
+    @media (max-width: 700px) {
+      .shell {
+        padding: 8px;
+      }
+
+      .stage {
+        max-height: calc(100dvh - 16px);
+      }
+
+      .terminalbar {
+        height: 36px;
+        gap: 8px;
+        padding: 0 8px;
+        font-size: 10px;
+      }
+
+      .light {
+        width: 8px;
+        height: 8px;
+      }
+
+      button {
+        width: 28px;
+        height: 28px;
+        font-size: 14px;
+      }
+
+      .screen {
+        inset: 36px 0 70px;
+        padding: 16px 18px 8px;
+      }
+
+      .hud {
+        top: 46px;
+        font-size: 10px;
+      }
+
+      .caption {
+        bottom: 14px;
+        min-height: 38px;
+        font-size: 15px;
+      }
+    }
   </style>
 </head>
 <body>
   <main class="shell">
-    <section class="stage" aria-label="honeymoon live cut">
+    <section id="stage" class="stage" aria-label="honeymoon terminal">
+      <div class="terminalbar" aria-hidden="true">
+        <div class="lights">
+          <span class="light rose"></span>
+          <span class="light gold"></span>
+          <span class="light mint"></span>
+        </div>
+        <span class="path">j+c@honeymoon:~/terminal</span>
+        <div class="controls">
+          <button id="restart-toggle" type="button" aria-label="Reiniciar" title="Reiniciar">↻</button>
+          <button id="audio-toggle" class="audio-toggle" type="button" aria-label="Activar audio" title="Activar audio">♪</button>
+        </div>
+      </div>
       <div class="hud">
-        <span>live cut</span>
+        <span id="chapter-label">honeymoon</span>
         <span>J. + C.</span>
       </div>
       <pre id="screen" class="screen"></pre>
       <div id="caption" class="caption"></div>
       <div class="scanlines"></div>
       <div class="bar"><div id="progress" class="progress"></div></div>
-      <div id="overlay" class="overlay">
-        <div class="panel">
-          <h1>honeymoon</h1>
-          <p>Una carta de amor hecha con codigo, un agente de IA, una terminal y dos iniciales que nadie mas necesita conocer.</p>
-          <button id="play">Iniciar pieza en vivo</button>
-          <div class="note">Pantalla completa recomendada. Espacio pausa/reanuda. R reinicia.</div>
-        </div>
-      </div>
     </section>
   </main>
 
   <script>
+    const stage = document.getElementById("stage");
     const screen = document.getElementById("screen");
     const caption = document.getElementById("caption");
     const progress = document.getElementById("progress");
-    const overlay = document.getElementById("overlay");
-    const playButton = document.getElementById("play");
+    const chapterLabel = document.getElementById("chapter-label");
+    const restartToggle = document.getElementById("restart-toggle");
+    const audioToggle = document.getElementById("audio-toggle");
 
     const totalDuration = 142000;
+    const AudioContextCtor = window.AudioContext || window.webkitAudioContext;
     let audioContext = null;
     let musicTimer = null;
+    let musicStep = 0;
     let startTime = 0;
     let pausedAt = 0;
     let paused = false;
     let running = false;
+    let animationFrame = null;
+    let wantsAudio = true;
 
     const faces = {
       J: {
@@ -450,7 +532,7 @@
       screen.innerHTML = renderCanvas(canvas);
       caption.textContent = chapter.text;
       progress.style.width = `${Math.min(100, (t / totalDuration) * 100)}%`;
-      document.querySelector(".hud span").textContent = chapter.title;
+      chapterLabel.textContent = chapter.title;
     }
 
     function midiToFreq(midi) {
@@ -470,40 +552,63 @@
       osc.stop(when + duration + 0.02);
     }
 
-    function startMusic() {
-      audioContext = new AudioContext();
+    function updateAudioButton(ready) {
+      audioToggle.classList.toggle("ready", ready);
+      audioToggle.setAttribute("aria-label", ready ? "Silenciar audio" : "Activar audio");
+      audioToggle.title = ready ? "Silenciar audio" : "Activar audio";
+    }
+
+    function scheduleMusic() {
+      if (!audioContext || musicTimer) return;
       const bpm = 78;
       const beat = 60 / bpm;
       const melody = [69, 72, 76, 74, 72, 69, 67, 69, 72, 76, 77, 76, 74, 72, 69, 72, 74, 76, 79, 76];
       const bass = [45, 52, 41, 48, 50, 52];
-      let step = 0;
       musicTimer = setInterval(() => {
+        if (!audioContext || audioContext.state !== "running") return;
         const now = audioContext.currentTime + 0.03;
-        const m = melody[step % melody.length];
-        const b = bass[Math.floor(step / 4) % bass.length];
+        const m = melody[musicStep % melody.length];
+        const b = bass[Math.floor(musicStep / 4) % bass.length];
         note(audioContext, now, m, beat * 0.82, 0.045);
         note(audioContext, now + beat * 0.25, m + 7, beat * 0.36, 0.022);
         note(audioContext, now, b, beat * 1.6, 0.032);
-        step++;
+        musicStep++;
       }, beat * 500);
+    }
+
+    async function startMusic() {
+      if (!AudioContextCtor) return false;
+      if (!audioContext) audioContext = new AudioContextCtor();
+      try {
+        if (audioContext.state === "suspended") {
+          await audioContext.resume();
+        }
+      } catch (error) {
+        updateAudioButton(false);
+        return false;
+      }
+      const ready = audioContext.state === "running";
+      if (ready) scheduleMusic();
+      updateAudioButton(ready);
+      return ready;
     }
 
     function stopMusic() {
       if (musicTimer) clearInterval(musicTimer);
       musicTimer = null;
-      if (audioContext) audioContext.close();
+      if (audioContext) audioContext.close().catch(() => {});
       audioContext = null;
+      updateAudioButton(false);
     }
 
     function start() {
-      overlay.classList.add("hidden");
       running = true;
       paused = false;
       pausedAt = 0;
       startTime = performance.now();
-      stopMusic();
-      startMusic();
-      requestAnimationFrame(loop);
+      if (animationFrame) cancelAnimationFrame(animationFrame);
+      if (wantsAudio) startMusic();
+      animationFrame = requestAnimationFrame(loop);
     }
 
     function loop(now) {
@@ -511,11 +616,10 @@
       const t = now - startTime;
       draw(t);
       if (t >= totalDuration) {
-        running = false;
-        stopMusic();
-        return;
+        startTime = now;
+        draw(0);
       }
-      requestAnimationFrame(loop);
+      animationFrame = requestAnimationFrame(loop);
     }
 
     function togglePause() {
@@ -523,8 +627,8 @@
       if (paused) {
         paused = false;
         startTime = performance.now() - pausedAt;
-        if (!audioContext) startMusic();
-        requestAnimationFrame(loop);
+        if (wantsAudio) startMusic();
+        animationFrame = requestAnimationFrame(loop);
       } else {
         paused = true;
         pausedAt = performance.now() - startTime;
@@ -533,14 +637,53 @@
     }
 
     function reset() {
-      stopMusic();
-      running = false;
       paused = false;
-      overlay.classList.remove("hidden");
+      running = true;
+      startTime = performance.now();
       draw(0);
+      if (wantsAudio) startMusic();
+      if (animationFrame) cancelAnimationFrame(animationFrame);
+      animationFrame = requestAnimationFrame(loop);
     }
 
-    playButton.addEventListener("click", start);
+    function fitScreen() {
+      const styles = getComputedStyle(screen);
+      const paddingX = parseFloat(styles.paddingLeft) + parseFloat(styles.paddingRight);
+      const paddingY = parseFloat(styles.paddingTop) + parseFloat(styles.paddingBottom);
+      const box = screen.getBoundingClientRect();
+      const availableWidth = Math.max(1, box.width - paddingX);
+      const availableHeight = Math.max(1, box.height - paddingY);
+      const byWidth = availableWidth / (90 * 0.62);
+      const byHeight = availableHeight / (31 * 1.18);
+      const fontSize = Math.max(7, Math.min(18, Math.floor(Math.min(byWidth, byHeight))));
+      screen.style.setProperty("--screen-font", `${fontSize}px`);
+    }
+
+    restartToggle.addEventListener("click", (event) => {
+      event.stopPropagation();
+      reset();
+    });
+
+    audioToggle.addEventListener("click", (event) => {
+      event.stopPropagation();
+      if (audioContext && audioContext.state === "running") {
+        wantsAudio = false;
+        stopMusic();
+      } else {
+        wantsAudio = true;
+        startMusic();
+      }
+    });
+
+    stage.addEventListener("pointerdown", () => {
+      if (wantsAudio) startMusic();
+    });
+
+    window.addEventListener("resize", () => {
+      fitScreen();
+      draw(Math.max(0, performance.now() - startTime));
+    });
+
     window.addEventListener("keydown", (event) => {
       if (event.code === "Space") {
         event.preventDefault();
@@ -549,7 +692,9 @@
       if (event.key.toLowerCase() === "r") reset();
     });
 
+    fitScreen();
     draw(0);
+    start();
   </script>
 </body>
 </html>

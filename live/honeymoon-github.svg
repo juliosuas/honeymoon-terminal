@@ -1,5 +1,5 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1280" height="720" viewBox="0 0 1280 720" role="img" aria-labelledby="title desc">
-  <title id="title">honeymoon - GitHub private preview</title>
+  <title id="title">honeymoon - GitHub public preview</title>
   <desc id="desc">Animated terminal-style love story preview for J. and C.</desc>
   <style>
     :root {
@@ -158,7 +158,7 @@
   </g>
 
   <rect x="34" y="34" width="1212" height="652" rx="18" fill="#05060a" opacity="0.82" stroke="#ffffff" stroke-opacity="0.16"/>
-  <text x="66" y="72" class="small dim">private github preview</text>
+  <text x="66" y="72" class="small dim">public github preview</text>
   <text x="1140" y="72" class="small dim">J. + C.</text>
 
   <g class="scene s0">
