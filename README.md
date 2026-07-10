@@ -43,6 +43,9 @@ data.
 
 `honeymoon` is the film I made from that.
 
+If this feels strange, funny, intimate, or a little too real, star it so more
+people find the weird corner of GitHub where code becomes feeling.
+
 ## The Video
 
 <p align="center">
@@ -74,6 +77,16 @@ Emotionally, it proved something else:
 
 > the heart does not have a stable API.
 
+## Why It Belongs On GitHub
+
+Most love stories are written as poems, films, screenshots, or songs.
+
+This one happened inside automation logs, agent memory, iOS accessibility trees,
+terminal animation, and a repository.
+
+GitHub is part of the story because the code was not just the tool. It was the
+place where the feeling became visible.
+
 ## What Happened
 
 Jeffrey helped me translate care into words.
@@ -102,6 +115,14 @@ handles, names, or identifying details.
 The feeling can be public.
 
 The people stay private.
+
+## Share
+
+- One-line pitch: `I built an AI agent to flirt for me on Hinge. It worked. Then I caught feelings.`
+- Suggested topics: `ai-art`, `terminal-art`, `creative-coding`, `generative-art`,
+  `ascii-art`, `web-audio`, `python`, `javascript`, `openclaw`, `love-story`
+- Launch notes and copy: [SHARE.md](SHARE.md)
+- Press/background notes: [PRESS.md](PRESS.md)
 
 <p align="center">
   <img

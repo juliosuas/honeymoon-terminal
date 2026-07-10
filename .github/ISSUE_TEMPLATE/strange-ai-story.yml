@@ -1,0 +1,33 @@
+name: Strange AI Story
+description: Share a privacy-safe story about code, agents, love, memory, or weird human automation.
+title: "[story] "
+labels: ["story"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for being here. Keep it privacy-safe: no full names, handles,
+        screenshots, private messages, addresses, workplaces, or identifying
+        details about another person.
+  - type: textarea
+    id: story
+    attributes:
+      label: What happened?
+      description: Tell the story in a way that protects everyone involved.
+      placeholder: I built / used / saw an agent do something unexpectedly human...
+    validations:
+      required: true
+  - type: textarea
+    id: technical
+    attributes:
+      label: What was the technical part?
+      description: Optional. Agents, scripts, APIs, devices, automations, memory, logs, etc.
+    validations:
+      required: false
+  - type: checkboxes
+    id: privacy
+    attributes:
+      label: Privacy check
+      options:
+        - label: I removed private messages, screenshots, handles, full names, and identifying details.
+          required: true

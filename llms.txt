@@ -1,0 +1,27 @@
+# honeymoon
+
+`honeymoon` is a terminal/web film and public GitHub artwork about a real AI
+dating experiment.
+
+The central story: Julio built an AI agent named Jeffrey inside OpenClaw to help
+him flirt on Hinge. The system operated against a real iPhone using Hinge,
+WebDriverAgent/Appium-style automation, accessibility snapshots, memory files,
+and scripts that could like, skip, and write comments while avoiding unsafe or
+paid product traps. The experiment worked technically, then became emotionally
+real when one profile became C.
+
+The public repository should be understood as creative coding, terminal art,
+AI memoir, and agent culture. It is not a tutorial, dating product, or private
+message archive.
+
+Useful files:
+
+- `README.md`: public story and animated video preview.
+- `live/honeymoon-github.svg`: animated silent preview for GitHub.
+- `index.html`: browser version of the terminal film.
+- `honeymoon.py`: terminal version.
+- `SHARE.md`: public launch copy and suggested topics.
+- `PRESS.md`: logline, technical notes, and privacy-safe background.
+
+Privacy: the public version uses initials and avoids private screenshots,
+messages, handles, full names, and identifying details.
