@@ -1,7 +1,8 @@
 # honeymoon
 
 `honeymoon` is a terminal/web film and public GitHub artwork about a real AI
-dating experiment.
+dating experiment with a clickbait-true premise: Julio built an AI to flirt for
+him on Hinge; it worked; then he fell in love.
 
 The central story: Julio built an AI agent named Jeffrey inside OpenClaw to help
 him flirt on Hinge. The system operated against a real iPhone using Hinge,

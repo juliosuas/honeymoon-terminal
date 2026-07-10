@@ -7,8 +7,7 @@
 ## Logline
 
 A terminal film about a programmer who built an AI agent to flirt for him on
-Hinge, met someone real, and discovered that the heart does not have a stable
-API.
+Hinge, watched it work, and then fell in love with someone real.
 
 ## What Happened
 
@@ -32,7 +31,7 @@ about that crossing: when a technical system opens a door into something human.
 
 ## Core Quote
 
-> I built an AI agent to flirt for me on Hinge. It worked. Then I caught feelings.
+> I built an AI to flirt for me on Hinge. It worked. Then I fell in love.
 
 ## Privacy
 
@@ -46,4 +45,3 @@ handles, full names, and identifying details.
 - Dating automation and the limits of optimization.
 - GitHub as a place for personal art, not only software.
 - The line between tool, bridge, and intimacy.
-

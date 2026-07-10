@@ -2,7 +2,7 @@
 
 ## One-Line Pitch
 
-I built an AI agent to flirt for me on Hinge. It worked. Then I caught feelings.
+I built an AI to flirt for me on Hinge. It worked. Then I fell in love.
 
 ## Short Pitch
 
@@ -12,7 +12,7 @@ moment the system stopped being a trick and became a love story.
 
 ## GitHub Description
 
-A terminal love story about an AI agent that helped me flirt on Hinge.
+A terminal film about an AI agent that helped me flirt on Hinge, and what happened after it worked.
 
 ## Suggested GitHub Topics
 
@@ -50,7 +50,7 @@ I built an AI agent to flirt for me on Hinge.
 
 It worked.
 
-Then I caught feelings.
+Then I fell in love.
 
 So I made a terminal film about it: `honeymoon`.
 
@@ -71,4 +71,3 @@ heart does not have a stable API.
 
 The public version uses initials and avoids private messages, screenshots,
 handles, full names, and identifying details.
-

@@ -1,25 +1,38 @@
 <p align="center">
   <img
     width="100%"
-    src="https://capsule-render.vercel.app/api?type=blur&height=230&color=0:06070b,45:bd93f9,70:ff79c6,100:8be9fd&text=honeymoon&fontColor=f8f3ff&fontAlign=50&fontAlignY=45&desc=how%20I%20met%20her%20with%20an%20AI%20agent&descAlign=50&descAlignY=66&animation=twinkling"
-    alt="honeymoon"
+    src="https://capsule-render.vercel.app/api?type=blur&height=250&color=0:06070b,45:bd93f9,70:ff79c6,100:8be9fd&text=I%20Built%20an%20AI%20to%20Flirt&fontColor=f8f3ff&fontAlign=50&fontAlignY=43&desc=then%20I%20fell%20in%20love&descAlign=50&descAlignY=65&animation=twinkling"
+    alt="I built an AI to flirt, then I fell in love"
   />
+</p>
+
+<h1 align="center">I Built an AI to Flirt. Then I Fell in Love.</h1>
+
+<p align="center">
+  <strong>A true story about Hinge automation, an agent named Jeffrey, one real
+  first date, and the moment a pipeline became a heartbreak.</strong>
 </p>
 
 <p align="center">
   <img
-    src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=700&size=24&duration=3600&pause=900&color=FF79C6&center=true&vCenter=true&width=820&lines=I+built+an+agent+to+flirt+for+me+on+Hinge;the+system+worked;then+I+caught+feelings"
+    src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=700&size=24&duration=3600&pause=900&color=FF79C6&center=true&vCenter=true&width=900&lines=I+automated+Hinge+on+a+real+iPhone;the+AI+opened+the+door;the+feelings+were+mine"
     alt="honeymoon typing intro"
   />
 </p>
 
-## This Is My Love Story
+## The Hook
 
 I met her because I built an AI agent to flirt for me on Hinge.
 
-The agent was called Jeffrey. It lived inside my OpenClaw setup and helped me
-operate dating like a system: reading profiles, learning my taste, writing
-comments, remembering what worked, and stopping before anything unsafe or paid.
+That sounds like a joke. It was not.
+
+The agent was called Jeffrey. It lived inside my OpenClaw setup, ran against a
+real iPhone, read Hinge profiles, learned my taste, wrote comments, remembered
+what worked, and stopped before anything unsafe or paid.
+
+It was supposed to be an experiment.
+
+Then it introduced me to someone real.
 
 At first it was funny and technical. An iPhone, Hinge, WebDriverAgent, Appium,
 accessibility snapshots, scripts, memory files, and a social copilot trying to
@@ -43,8 +56,8 @@ data.
 
 `honeymoon` is the film I made from that.
 
-If this feels strange, funny, intimate, or a little too real, star it so more
-people find the weird corner of GitHub where code becomes feeling.
+If you have ever built something too clever and then got emotionally destroyed
+by reality, star this repo.
 
 ## The Video
 
@@ -60,7 +73,7 @@ people find the weird corner of GitHub where code becomes feeling.
 
 ## What I Built
 
-- A Hinge automation system running against a real iPhone.
+- Hinge automation running against a real iPhone.
 - A Jeffrey/OpenClaw agent that acted as a social copilot.
 - WebDriverAgent and Appium flows to inspect Hinge screens through the iOS
   accessibility tree.
@@ -86,6 +99,10 @@ terminal animation, and a repository.
 
 GitHub is part of the story because the code was not just the tool. It was the
 place where the feeling became visible.
+
+This is not a dating bot launch.
+
+It is a receipt.
 
 ## What Happened
 
@@ -118,7 +135,7 @@ The people stay private.
 
 ## Share
 
-- One-line pitch: `I built an AI agent to flirt for me on Hinge. It worked. Then I caught feelings.`
+- One-line pitch: `I built an AI to flirt for me on Hinge. It worked. Then I fell in love.`
 - Suggested topics: `ai-art`, `terminal-art`, `creative-coding`, `generative-art`,
   `ascii-art`, `web-audio`, `python`, `javascript`, `openclaw`, `love-story`
 - Launch notes and copy: [SHARE.md](SHARE.md)
