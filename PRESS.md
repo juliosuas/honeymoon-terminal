@@ -6,8 +6,8 @@
 
 ## Logline
 
-A terminal film about a programmer who built an AI agent to flirt for him on
-Hinge, watched it work, and then fell in love with someone real.
+A real Black Mirror-ish terminal film about a programmer whose AI agent flirted
+for him on Hinge, watched it work, and then fell in love with someone real.
 
 ## What Happened
 
@@ -31,7 +31,7 @@ about that crossing: when a technical system opens a door into something human.
 
 ## Core Quote
 
-> I built an AI to flirt for me on Hinge. It worked. Then I fell in love.
+> My AI flirted for me. Then I fell in love for real.
 
 ## Privacy
 
@@ -45,3 +45,5 @@ handles, full names, and identifying details.
 - Dating automation and the limits of optimization.
 - GitHub as a place for personal art, not only software.
 - The line between tool, bridge, and intimacy.
+- A true Black Mirror-style story with a tender ending.
+- The first wave of AI-native heartbreak.

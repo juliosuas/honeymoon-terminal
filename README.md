@@ -1,21 +1,21 @@
 <p align="center">
   <img
     width="100%"
-    src="https://capsule-render.vercel.app/api?type=blur&height=250&color=0:06070b,45:bd93f9,70:ff79c6,100:8be9fd&text=I%20Built%20an%20AI%20to%20Flirt&fontColor=f8f3ff&fontAlign=50&fontAlignY=43&desc=then%20I%20fell%20in%20love&descAlign=50&descAlignY=65&animation=twinkling"
-    alt="I built an AI to flirt, then I fell in love"
+    src="https://capsule-render.vercel.app/api?type=blur&height=250&color=0:06070b,45:bd93f9,70:ff79c6,100:8be9fd&text=My%20AI%20Flirted%20For%20Me&fontColor=f8f3ff&fontAlign=50&fontAlignY=43&desc=then%20I%20fell%20in%20love%20for%20real&descAlign=50&descAlignY=65&animation=twinkling"
+    alt="My AI flirted for me, then I fell in love for real"
   />
 </p>
 
-<h1 align="center">I Built an AI to Flirt. Then I Fell in Love.</h1>
+<h1 align="center">My AI Flirted For Me. Then I Fell in Love For Real.</h1>
 
 <p align="center">
-  <strong>A true story about Hinge automation, an agent named Jeffrey, one real
-  first date, and the moment a pipeline became a heartbreak.</strong>
+  <strong>A real Black Mirror-ish love story about Hinge automation, an agent
+  named Jeffrey, one first date, and the moment a pipeline became a heartbreak.</strong>
 </p>
 
 <p align="center">
   <img
-    src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=700&size=24&duration=3600&pause=900&color=FF79C6&center=true&vCenter=true&width=900&lines=I+automated+Hinge+on+a+real+iPhone;the+AI+opened+the+door;the+feelings+were+mine"
+    src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=700&size=24&duration=3600&pause=900&color=FF79C6&center=true&vCenter=true&width=950&lines=I+automated+Hinge+on+a+real+iPhone;the+agent+opened+the+door;the+love+was+not+automated"
     alt="honeymoon typing intro"
   />
 </p>
@@ -30,7 +30,7 @@ The agent was called Jeffrey. It lived inside my OpenClaw setup, ran against a
 real iPhone, read Hinge profiles, learned my taste, wrote comments, remembered
 what worked, and stopped before anything unsafe or paid.
 
-It was supposed to be an experiment.
+It was supposed to be a clever experiment.
 
 Then it introduced me to someone real.
 
@@ -56,8 +56,8 @@ data.
 
 `honeymoon` is the film I made from that.
 
-If you have ever built something too clever and then got emotionally destroyed
-by reality, star this repo.
+If this feels like the first tender episode of a future nobody is ready for,
+star it and send it to the person who would understand.
 
 ## The Video
 
@@ -104,6 +104,17 @@ This is not a dating bot launch.
 
 It is a receipt.
 
+## Make It Travel
+
+If this hit you, help the story escape the algorithm:
+
+- Star the repo so GitHub knows the weird thing is alive.
+- Share the one-line pitch: `My AI flirted for me. Then I fell in love for real.`
+- Send it to builders, romantics, artists, AI people, and anyone who has ever
+  mistaken a system for a shield.
+- If you want this to become a short film, installation, talk, or longer essay,
+  support it through the repo sponsor button when available.
+
 ## What Happened
 
 Jeffrey helped me translate care into words.
@@ -135,11 +146,12 @@ The people stay private.
 
 ## Share
 
-- One-line pitch: `I built an AI to flirt for me on Hinge. It worked. Then I fell in love.`
+- One-line pitch: `My AI flirted for me. Then I fell in love for real.`
 - Suggested topics: `ai-art`, `terminal-art`, `creative-coding`, `generative-art`,
   `ascii-art`, `web-audio`, `python`, `javascript`, `openclaw`, `love-story`
 - Launch notes and copy: [SHARE.md](SHARE.md)
 - Press/background notes: [PRESS.md](PRESS.md)
+- Fame/money plan: [FAME_AND_MONEY_PLAN.md](FAME_AND_MONEY_PLAN.md)
 
 <p align="center">
   <img
